@@ -1,0 +1,44 @@
+{
+    "name": "peresmishnyk/laravel-localize",
+    "description": "Localize laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michkire Dmytro",
+            "email": "michkire@gmail.com",
+            "homepage": "https://peresmishnyk.com"
+        }
+    ],
+    "homepage": "https://github.com/peresmishnyk/laravel-localize",
+    "keywords": [
+        "Laravel", "Backpack", "Backpack for Laravel", "Backpack Addon", "LaravelLocalize"
+    ],
+    "require": {
+        "illuminate/support": "~7|~8",
+        "backpack/crud": "^4.1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~5|~6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Peresmishnyk\\LaravelLocalize\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Peresmishnyk\\LaravelLocalize\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --testdox"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Peresmishnyk\\LaravelLocalize\\AddonServiceProvider"
+            ]
+        }
+    }
+}
