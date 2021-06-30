@@ -24,7 +24,7 @@ jobs:
                   php-version: 8.0
                   extensions: curl, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, iconv
                   tools: phpunit
-                  coverage: none
+                  coverage: xdebug
 
             -   name: Cache dependencies
                 uses: actions/cache@v1
