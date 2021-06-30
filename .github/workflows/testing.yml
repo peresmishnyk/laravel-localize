@@ -8,11 +8,11 @@ on:
 jobs:
     test:
         runs-on: ubuntu-latest
-        
+
         strategy:
             # if one job fails, abort the next ones too, because they'll probably fail - best to save the minutes
             fail-fast: false  # to change to: true
-          
+
             # run all combinations of the following, to make sure they're working together
             matrix:
                 # os: [ubuntu-latest, macos-latest, windows-latest]
@@ -36,7 +36,7 @@ jobs:
                         laravel: 7.*
 
         name: PHP ${{ matrix.php }}, Laravel ${{ matrix.laravel }}, PHPUnit ${{ matrix.phpunit }}, DBAL ${{ matrix.dbal }} --prefer-${{ matrix.dependency-version }}
-        
+
         steps:
             -   name: Checkout code
                 uses: actions/checkout@v2
@@ -50,7 +50,7 @@ jobs:
                 with:
                     php-version: ${{ matrix.php }}
                     extensions: curl, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, iconv
-                    coverage: none
+                    coverage: xdebug
             -   name: Cache dependencies
                 uses: actions/cache@v1
                 with:
@@ -62,3 +62,20 @@ jobs:
                     composer update --prefer-${{ matrix.dependency-version }} --prefer-dist --no-interaction
             -   name: Execute tests
                 run: composer test
+    coverage:
+        needs: [ test ]
+        name: coverage
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@master
+          - uses: actions/setup-node@master
+            with:
+              node-version: '12'
+          - run: npm install -g yarn
+          - run: yarn install
+          - run: yarn build
+          - uses: paambaati/codeclimate-action@v2.2.4
+          env:
+            CC_TEST_REPORTER_ID: 945dfb58a832d233a3caeb84e3e6d3be212e8c7abcb48117fce63b9adcb43647
+          with:
+            coverageCommand: yarn coverage
