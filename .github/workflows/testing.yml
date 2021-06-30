@@ -83,7 +83,7 @@ jobs:
             -   name: Setup PHP
                 uses: shivammathur/setup-php@v2
                 with:
-                  php-version: ${{ matrix.php }}
+                  php-version: 8.0
                   extensions: curl, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, iconv
                   coverage: none
 
