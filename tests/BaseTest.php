@@ -1,6 +1,6 @@
 <?php
 
-namespace Backpack\CRUD\Tests;
+namespace Peresmishnyk\LaravelLocalize\Tests;
 
 use Orchestra\Testbench\TestCase;
 
