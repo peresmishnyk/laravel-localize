@@ -13,30 +13,35 @@ class LocalizeRoute
     public function __construct($config_key)
     {
         $this::$config_key = $config_key;
-        dump('Config key', $config_key);
+    }
+
+    public function getConfig($key = ''){
+        $key = trim(static::$config_key . '.' . $key, '.');
+
+        return \Config::get($key);
     }
 
     public static function byDomain(...$args)
     {
-        list($params, $closure) = self::parse_params($args, __FUNCTION__);
-        self::domain($params, $closure, true);
+        list($params, $closure) = static::parse_params($args, __FUNCTION__);
+        static::domain($params, $closure, true);
     }
 
     public static function byPrefixWithoutDefault(...$args)
     {
-        list($params, $closure) = self::parse_params($args, __FUNCTION__);
-        self::prefix($params, $closure, true);
+        list($params, $closure) = static::parse_params($args, __FUNCTION__);
+        static::prefix($params, $closure, true);
     }
 
     public static function byPrefix(...$args)
     {
-        list($params, $closure) = self::parse_params($args, __FUNCTION__);
-        self::prefix($params, $closure, false);
+        list($params, $closure) = static::parse_params($args, __FUNCTION__);
+        static::prefix($params, $closure, false);
     }
 
     private static function prefix(array $params, \Closure $closure, bool $skip_prefix_for_default)
     {
-//        $use_locale_middleware = $params['use_locale_middleware'] ?? config('localized-route.use_locale_middleware', true);
+        $use_locale_middleware = $params['use_locale_middleware'] ?? config('localized-route.use_locale_middleware', true);
 //        $register_redirect_for_default = $params['redirect_for_default'] ??
 
         // Save app locale
@@ -49,7 +54,7 @@ class LocalizeRoute
                 'prefix' => $key,
                 'as' => $locale . '.',
                 'locale' => $locale,
-                //'middleware' => $use_locale_middleware ? ['locale'] : []
+                'middleware' => $use_locale_middleware ? ['locale'] : []
             ];
 
             if ($params['default_locale'] === $locale && $skip_prefix_for_default) {
@@ -88,7 +93,6 @@ class LocalizeRoute
 
     private static function parse_params($args, $caller): array
     {
-        dump('parse params');
         $args = array_pad($args, -2, []);
         if (is_array($args[0]) && $args[1] instanceof \Closure) {
             list($params, $closure) = $args;
@@ -96,7 +100,7 @@ class LocalizeRoute
             throw new \InvalidArgumentException("Use LocalizeRoute::{$caller}(Closure \$closure) or LocalizeRoute::{$caller}(array \$params, Closure \$closure)");
         }
         // Merge config with runtime params
-        $params = array_merge(config(self::$config_key), $params);
+        $params = array_merge(config(static::$config_key), $params);
         return [$params, $closure];
     }
 }
