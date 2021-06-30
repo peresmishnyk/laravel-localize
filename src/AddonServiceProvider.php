@@ -33,8 +33,8 @@ class AddonServiceProvider extends ServiceProvider
 
         $this->registerUrlGenerator();
 
-        $this->booting(\Closure::fromCallable([$this, 'booting_callback']));
-        $this->booted(\Closure::fromCallable([$this, 'booted_callback']));
+//        $this->booting(\Closure::fromCallable([$this, 'booting_callback']));
+//        $this->booted(\Closure::fromCallable([$this, 'booted_callback']));
     }
 
     private function booting_callback()
