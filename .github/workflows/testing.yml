@@ -46,5 +46,5 @@ jobs:
                 env:
                     CC_TEST_REPORTER_ID: 7b4c081a17ad129d9a8e65c31623b640c7975c461ec307b0082cacaccf2e450a
                 with:
-                    coverageCommand: phpunit --coverage-clover coverage.xml
+                    coverageCommand: phpunit --coverage-clover ${{github.workspace}}/coverage.xml
                     coverageLocations: ${{github.workspace}}/coverage.xml:clover
