@@ -104,7 +104,7 @@ jobs:
                   node-version: '12'
 
             -   name: Coverage
-                uses: paambaati/codeclimate-action@v2.7ю5
+                uses: paambaati/codeclimate-action@v2.7.5
                 env:
                     CC_TEST_REPORTER_ID: 7b4c081a17ad129d9a8e65c31623b640c7975c461ec307b0082cacaccf2e450a
                 with:
