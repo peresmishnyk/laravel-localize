@@ -56,8 +56,8 @@
                 "PATH=$PATH:/usr/local/bin",
                 "php-cs-fixer fix ."
             ],
-            "commit-msg": "cat $1",
             "pre-push": [
+                "PATH=$PATH:/usr/local/bin",
                 "php-cs-fixer fix --dry-run .",
                 "phpunit"
             ],

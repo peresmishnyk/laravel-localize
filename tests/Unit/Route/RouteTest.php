@@ -47,4 +47,8 @@ class RouteTest extends BaseTest
             //$this->assertEquals($class_name, $aliases[$key]);
         }
     }
+
+    public function test_fail(){
+        $this->assertTrue(false);
+    }
 }

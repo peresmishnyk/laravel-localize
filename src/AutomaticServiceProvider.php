@@ -34,11 +34,11 @@ trait AutomaticServiceProvider
             file_exists($helpers = $this->packageHelpersFile())) {
             require $helpers;
         }
-        
+
         if ($this->packageDirectoryExistsAndIsNotEmpty('resources/lang')) {
             $this->loadTranslationsFrom($this->packageLangsPath(), $this->vendorNameDotPackageName());
         }
-        
+
         if ($this->packageDirectoryExistsAndIsNotEmpty('resources/views')) {
             // Load published views
             $this->loadViewsFrom($this->publishedViewsPath(), $this->vendorNameDotPackageName());
@@ -50,7 +50,7 @@ trait AutomaticServiceProvider
         if ($this->packageDirectoryExistsAndIsNotEmpty('database/migrations')) {
             $this->loadMigrationsFrom($this->packageMigrationsPath());
         }
-        
+
         if ($this->packageDirectoryExistsAndIsNotEmpty('routes')) {
             $this->loadRoutesFrom($this->packageRoutesFile());
         }
@@ -133,7 +133,7 @@ trait AutomaticServiceProvider
     // -------------
     // Package paths
     // -------------
-    
+
     protected function packageViewsPath()
     {
         return $this->path.'/resources/views';
@@ -172,7 +172,7 @@ trait AutomaticServiceProvider
     // ---------------
     // Published paths
     // ---------------
-    
+
     protected function publishedViewsPath()
     {
         return base_path('resources/views/vendor/'.$this->vendorName.'/'.$this->packageName);
