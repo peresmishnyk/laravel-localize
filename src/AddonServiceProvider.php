@@ -4,7 +4,6 @@ namespace Peresmishnyk\LaravelLocalize;
 
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
-use Peresmishnyk\BackpackSettings\Settings;
 use Peresmishnyk\LaravelLocalize\Providers\LocalizeRoute;
 use Peresmishnyk\LaravelLocalize\Providers\UrlGenerator;
 
@@ -27,7 +26,7 @@ class AddonServiceProvider extends ServiceProvider
             $this->mergeConfigFrom($this->packageConfigFile(), $this->vendorNameDotPackageName());
         }
 
-        $this->app->singleton('localize-route', function ($app) {
+        $this->app->singleton('localize-route', function () {
             return new LocalizeRoute($this->vendorNameDotPackageName());
         });
 
@@ -76,7 +75,7 @@ class AddonServiceProvider extends ServiceProvider
 
         // Register Facade
         $loader = AliasLoader::getInstance();
-        $loader->alias('LocalizeRoute', \Peresmishnyk\LaravelLocalize\Facades\LocalizeRoute::class);
+        $loader->alias('LocalizeRoute', LocalizeRoute::class);
     }
 
     /**
