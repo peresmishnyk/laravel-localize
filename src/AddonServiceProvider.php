@@ -1,4 +1,11 @@
 <?php
+/**
+ * Service provider
+ *
+ * @package     Peresmishnyk\LaravelLocalize
+ * @author      Michkire Dmytro <michkire@gmail.com>
+ * @copyright   Copyright (c) 2021, Peresmishnyk
+ **/
 
 namespace Peresmishnyk\LaravelLocalize;
 
@@ -7,12 +14,25 @@ use Illuminate\Support\ServiceProvider;
 use Peresmishnyk\LaravelLocalize\Providers\LocalizeRoute;
 use Peresmishnyk\LaravelLocalize\Providers\UrlGenerator;
 
+/**
+ * Class AddonServiceProvider
+ * {@inheritdoc }
+ */
 class AddonServiceProvider extends ServiceProvider
 {
     use AutomaticServiceProvider;
 
+    /**
+     * @var string Vendor name
+     */
     protected $vendorName = 'peresmishnyk';
+    /**
+     * @var string Package name
+     */
     protected $packageName = 'laravel-localize';
+    /**
+     * @var array Package commands
+     */
     protected $commands = [];
 
     /**

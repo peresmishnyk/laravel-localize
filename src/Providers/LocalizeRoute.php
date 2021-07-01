@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Just another summery
+ * @author      Michkire Dmytro <michkire@gmail.com>
+ * @copyright   Copyright (c) 2021, Peresmishnyk
+ **/
 
 namespace Peresmishnyk\LaravelLocalize\Providers;
 
@@ -10,14 +14,13 @@ use InvalidArgumentException;
 
 /**
  * Class LocalizeRoute
- * @package Peresmishnyk\LaravelLocalize\Providers
  */
 class LocalizeRoute
 {
     /**
-     * @var string
+     * @var string Package config key
      */
-    protected static string $configKey;
+    protected static $configKey;
 
     /**
      * LocalizeRoute constructor.

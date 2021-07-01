@@ -1,6 +1,13 @@
 <?php
+/**
+ * Register package helpers
+ *
+ * @package Peresmishnyk\LaravelLocalize
+ * @author      Michkire Dmytro <michkire@gmail.com>
+ * @copyright   Copyright (c) 2021, Peresmishnyk
+ **/
 
-if (! function_exists('route')) {
+if (!function_exists('route')) {
     /**
      * Generate the URL to a named route.
      *
@@ -17,7 +24,7 @@ if (! function_exists('route')) {
     }
 }
 
-if (! function_exists('localize_route')) {
+if (!function_exists('localize_route')) {
     /**
      * Generate the URL to a named route.
      *

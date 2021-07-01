@@ -1,4 +1,9 @@
 <?php
+/**
+ * @package     Peresmishnyk\LaravelLocalize
+ * @author      Michkire Dmytro <michkire@gmail.com>
+ * @copyright   Copyright (c) 2021, Peresmishnyk
+ **/
 
 namespace Peresmishnyk\LaravelLocalize;
 
@@ -11,6 +16,10 @@ namespace Peresmishnyk\LaravelLocalize;
  */
 trait AutomaticServiceProvider
 {
+    /**
+     * AutomaticServiceProvider constructor.
+     * @param $app
+     */
     public function __construct($app)
     {
         $this->app = $app;
@@ -125,6 +134,9 @@ trait AutomaticServiceProvider
         return $this->vendorName.'.'.$this->packageName;
     }
 
+    /**
+     * @return string
+     */
     protected function vendorNameSlashPackageName()
     {
         return $this->vendorName.'/'.$this->packageName;
@@ -134,36 +146,57 @@ trait AutomaticServiceProvider
     // Package paths
     // -------------
 
+    /**
+     * @return string
+     */
     protected function packageViewsPath()
     {
         return $this->path.'/resources/views';
     }
 
+    /**
+     * @return string
+     */
     protected function packageLangsPath()
     {
         return $this->path.'/resources/lang';
     }
 
+    /**
+     * @return string
+     */
     protected function packageAssetsPath()
     {
         return $this->path.'/resources/assets';
     }
 
+    /**
+     * @return string
+     */
     protected function packageMigrationsPath()
     {
         return $this->path.'/database/migrations';
     }
 
+    /**
+     * @return string
+     */
     protected function packageConfigFile()
     {
         return $this->path.'/config/'.$this->packageName.'.php';
     }
 
+    /**
+     * @return string
+     */
     protected function packageRoutesFile()
     {
         return $this->path.'/routes/'.$this->packageName.'.php';
     }
 
+    /**
+     * @return string
+     */
     protected function packageHelpersFile()
     {
         return $this->path.'/bootstrap/helpers.php';
@@ -173,21 +206,33 @@ trait AutomaticServiceProvider
     // Published paths
     // ---------------
 
+    /**
+     * @return string
+     */
     protected function publishedViewsPath()
     {
         return base_path('resources/views/vendor/'.$this->vendorName.'/'.$this->packageName);
     }
 
+    /**
+     * @return string
+     */
     protected function publishedConfigFile()
     {
         return config_path($this->vendorNameSlashPackageName().'.php');
     }
 
+    /**
+     * @return string
+     */
     protected function publishedAssetsPath()
     {
         return public_path('vendor/'.$this->vendorNameSlashPackageName());
     }
 
+    /**
+     * @return string
+     */
     protected function publishedLangsPath()
     {
         return resource_path('lang/vendor/'.$this->vendorName);
@@ -197,6 +242,10 @@ trait AutomaticServiceProvider
     // Miscellaneous
     // -------------
 
+    /**
+     * @param $name
+     * @return bool
+     */
     protected function packageDirectoryExistsAndIsNotEmpty($name)
     {
         // check if directory exists

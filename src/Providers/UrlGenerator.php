@@ -1,4 +1,10 @@
 <?php
+/**
+ * Custom UrlGenerator
+ *
+ * @author      Michkire Dmytro <michkire@gmail.com>
+ * @copyright   Copyright (c) 2021, Peresmishnyk
+ **/
 
 namespace Peresmishnyk\LaravelLocalize\Providers;
 
@@ -6,9 +12,12 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\RouteCollection;
 use Illuminate\Routing\UrlGenerator as BaseUrlGenerator;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 
+/**
+ * Class UrlGenerator
+ * @package Peresmishnyk\LaravelLocalize
+ */
 class UrlGenerator extends BaseUrlGenerator
 {
     /**
