@@ -37,7 +37,9 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit --testdox",
-        "cghooks": "vendor/bin/cghooks"
+        "cghooks": "vendor/bin/cghooks",
+        "post-install-cmd": "cghooks add --ignore-lock",
+        "post-update-cmd": "cghooks update"
     },
     "extra": {
         "laravel": {
