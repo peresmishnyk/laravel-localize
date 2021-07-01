@@ -36,7 +36,8 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit --testdox"
+        "test": "vendor/bin/phpunit --testdox",
+        "cghooks": "vendor/bin/cghooks"
     },
     "extra": {
         "laravel": {
@@ -50,6 +51,7 @@
         "hooks": {
             "pre-commit": [
                 "echo committing as $(git config user.name)",
+                "PATH=$PATH:/usr/local/bin",
                 "php-cs-fixer fix ."
             ],
             "commit-msg": "grep -q '[A-Z]+-[0-9]+.*' $1",
