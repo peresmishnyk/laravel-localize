@@ -69,7 +69,7 @@ jobs:
 
   coverage:
     needs: [ test ]
-    name: Coverage
+    name: Test coverage
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
