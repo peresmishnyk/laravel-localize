@@ -7,7 +7,7 @@
 [![The Whole Fruit Manifesto](https://img.shields.io/badge/writing%20standard-the%20whole%20fruit-brightgreen)](https://github.com/the-whole-fruit/manifesto)
 
 
-> **// TODO: customize this description and delete this line**
+> **// TODO: customize this description and delete this line later**
 
 This package provides XXX functionality for projects that use the [Backpack for Laravel](https://backpackforlaravel.com/) administration panel. 
 
