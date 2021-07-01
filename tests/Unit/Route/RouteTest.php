@@ -50,6 +50,6 @@ class RouteTest extends BaseTest
 
     public function test_fail()
     {
-        $this->assertTrue(true);
+        $this->assertTrue(false);
     }
 }
