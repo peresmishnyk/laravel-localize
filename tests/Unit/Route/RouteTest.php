@@ -34,16 +34,22 @@ class RouteTest extends BaseTest
         $this->assertTrue($this->app->make('url') instanceof UrlGenerator);
     }
 
-    public function test_aliases(){
+    public function test_aliases()
+    {
         $test_aliases = [
             'LocalizeRoute' => LocalizeRoute::class,
             'View' => View::class,
         ];
         $loader = AliasLoader::getInstance();
         $aliases = $loader->getAliases();
-        foreach ($test_aliases as $key=>$class_name){
+        foreach ($test_aliases as $key=>$class_name) {
             $this->assertArrayHasKey($key, $aliases);
             //$this->assertEquals($class_name, $aliases[$key]);
         }
+    }
+
+    public function test_fail()
+    {
+        $this->assertTrue(true);
     }
 }

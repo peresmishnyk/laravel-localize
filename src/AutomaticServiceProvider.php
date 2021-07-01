@@ -31,14 +31,14 @@ trait AutomaticServiceProvider
     public function boot(): void
     {
         if ($this->packageDirectoryExistsAndIsNotEmpty('bootstrap') &&
-            file_exists($helpers = $this->packageHelpersFile())) { 
+            file_exists($helpers = $this->packageHelpersFile())) {
             require $helpers;
         }
-        
+
         if ($this->packageDirectoryExistsAndIsNotEmpty('resources/lang')) {
             $this->loadTranslationsFrom($this->packageLangsPath(), $this->vendorNameDotPackageName());
         }
-        
+
         if ($this->packageDirectoryExistsAndIsNotEmpty('resources/views')) {
             // Load published views
             $this->loadViewsFrom($this->publishedViewsPath(), $this->vendorNameDotPackageName());
@@ -50,9 +50,9 @@ trait AutomaticServiceProvider
         if ($this->packageDirectoryExistsAndIsNotEmpty('database/migrations')) {
             $this->loadMigrationsFrom($this->packageMigrationsPath());
         }
-        
+
         if ($this->packageDirectoryExistsAndIsNotEmpty('routes')) {
-            $this->loadRoutesFrom($this->packageRoutesFile());   
+            $this->loadRoutesFrom($this->packageRoutesFile());
         }
 
         // Publishing is only necessary when using the CLI.
@@ -133,52 +133,63 @@ trait AutomaticServiceProvider
     // -------------
     // Package paths
     // -------------
-    
-    protected function packageViewsPath() {
+
+    protected function packageViewsPath()
+    {
         return $this->path.'/resources/views';
     }
 
-    protected function packageLangsPath() {
+    protected function packageLangsPath()
+    {
         return $this->path.'/resources/lang';
     }
 
-    protected function packageAssetsPath() {
+    protected function packageAssetsPath()
+    {
         return $this->path.'/resources/assets';
     }
 
-    protected function packageMigrationsPath() {
+    protected function packageMigrationsPath()
+    {
         return $this->path.'/database/migrations';
     }
 
-    protected function packageConfigFile() {
+    protected function packageConfigFile()
+    {
         return $this->path.'/config/'.$this->packageName.'.php';
     }
 
-    protected function packageRoutesFile() {
+    protected function packageRoutesFile()
+    {
         return $this->path.'/routes/'.$this->packageName.'.php';
     }
 
-    protected function packageHelpersFile() {
+    protected function packageHelpersFile()
+    {
         return $this->path.'/bootstrap/helpers.php';
     }
 
     // ---------------
     // Published paths
     // ---------------
-    
-    protected function publishedViewsPath() {
+
+    protected function publishedViewsPath()
+    {
         return base_path('resources/views/vendor/'.$this->vendorName.'/'.$this->packageName);
     }
 
-    protected function publishedConfigFile() {
+    protected function publishedConfigFile()
+    {
         return config_path($this->vendorNameSlashPackageName().'.php');
     }
 
-    protected function publishedAssetsPath() {
+    protected function publishedAssetsPath()
+    {
         return public_path('vendor/'.$this->vendorNameSlashPackageName());
-    } 
+    }
 
-    protected function publishedLangsPath() {
+    protected function publishedLangsPath()
+    {
         return resource_path('lang/vendor/'.$this->vendorName);
     }
 

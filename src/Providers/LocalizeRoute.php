@@ -3,7 +3,6 @@
 
 namespace Peresmishnyk\LaravelLocalize\Providers;
 
-
 use Illuminate\Support\Facades\Route;
 
 class LocalizeRoute
@@ -15,7 +14,8 @@ class LocalizeRoute
         $this::$config_key = $config_key;
     }
 
-    public function getConfig($key = ''){
+    public function getConfig($key = '')
+    {
         $key = trim(static::$config_key . '.' . $key, '.');
 
         return \Config::get($key);
@@ -68,7 +68,8 @@ class LocalizeRoute
         app()->setLocale($saved_app_locale);
     }
 
-    private static function domain(array $params, \Closure $closure){
+    private static function domain(array $params, \Closure $closure)
+    {
         // Save app locale
         $saved_app_locale = app()->getLocale();
 
