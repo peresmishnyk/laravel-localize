@@ -51,6 +51,9 @@
             "src/helpers.php"
         ],
         "hooks": {
+            "config": {
+                "stop-on-failure": ["pre-push"]
+            },
             "pre-commit": [
                 "echo committing as $(git config user.name)",
                 "PATH=$PATH:/usr/local/bin",
