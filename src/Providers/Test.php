@@ -7,11 +7,9 @@
 
 namespace Peresmishnyk\LaravelLocalize\Providers;
 
-
 /**
  * Class Test
  */
 class Test
 {
-
 }
