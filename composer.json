@@ -56,7 +56,6 @@
                 "PATH=$PATH:/usr/local/bin",
                 "php-cs-fixer fix ."
             ],
-            "commit-msg": "grep -q '[A-Z]+-[0-9]+.*' $1",
             "pre-push": [
                 "php-cs-fixer fix --dry-run .",
                 "phpunit"
