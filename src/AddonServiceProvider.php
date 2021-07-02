@@ -25,7 +25,7 @@ class AddonServiceProvider extends ServiceProvider
     /**
      * @var string Vendor name
      */
-    protected static $vendorName = 'peresmishnyk';
+    protected $vendorName = 'peresmishnyk';
     /**
      * @var string Package name
      */
