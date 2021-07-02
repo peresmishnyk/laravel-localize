@@ -25,13 +25,15 @@ class AddonServiceProvider extends ServiceProvider
     /**
      * @var string Vendor name
      */
-    protected $vendorName = 'peresmishnyk';
+    protected static $vendorName = 'peresmishnyk';
     /**
      * @var string Package name
      */
     protected $packageName = 'laravel-localize';
     /**
-     * @var array Package commands
+     * Package commands array
+     * Define package commands
+     * @var array
      */
     protected $commands = [];
 

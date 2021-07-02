@@ -10,7 +10,6 @@
 if (!function_exists('route')) {
     /**
      * Generate the URL to a named route.
-     * ToDo: test todo export
      *
      * @param string $name
      * @param array $parameters
@@ -21,6 +20,7 @@ if (!function_exists('route')) {
      */
     function route($name, $parameters = [], $absolute = true, $locale = null)
     {
+        // TODO: Move this code to another location
         return app('url')->route($name, $parameters, $absolute, $locale);
     }
 }

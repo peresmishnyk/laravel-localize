@@ -16,6 +16,18 @@ use Illuminate\Support\Facades\Route;
 
 /**
  * Class UrlGenerator
+ *
+ * # Заголовок первого уровня
+ * ### Заголовок третьего уровня
+ * ###### Заголовок шестого уровня
+ *
+ * + list
+ * + list
+ * + list
+ *
+ * *выделение* (например, курсив)
+ * **сильное выделение** (например, полужирное начертание)
+ * {@inheritDoc}
  * @package Peresmishnyk\LaravelLocalize
  */
 class UrlGenerator extends BaseUrlGenerator
