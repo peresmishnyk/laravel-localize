@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <phpdocumentor configVersion="3.0">
     <paths>
-        <output>.github_pages</output>
+        <output>docs</output>
         <!--Optional:-->
         <cache>build/cache</cache>
     </paths>
@@ -47,7 +47,7 @@
         <guide format="rst">
             <source dsn=".">
                 <!--1 or more repetitions:-->
-                <path>docs</path>
+                <path>manuals</path>
             </source>
         </guide>
     </version>
