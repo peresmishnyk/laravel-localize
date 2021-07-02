@@ -49,8 +49,6 @@
                 <!--1 or more repetitions:-->
                 <path>docs</path>
             </source>
-            <!--Optional:-->
-            <output>docs</output>
         </guide>
     </version>
 </phpdocumentor>
