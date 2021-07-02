@@ -14,6 +14,7 @@
             <source dsn=".">
                 <!--1 or more repetitions:-->
                 <path>src</path>
+                <path>vendor/laravel</path>
             </source>
             <!--Optional:-->
             <output>api</output>
@@ -49,6 +50,7 @@
                 <!--1 or more repetitions:-->
                 <path>manuals</path>
             </source>
+            <output>docs</output>
         </guide>
     </version>
 </phpdocumentor>

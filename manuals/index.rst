@@ -6,7 +6,7 @@
     :maxdepth: 3
 
    chapter-1/index
-   chapter-1/instaling
+   chapter-1/installing
    chapter-2/index
 
 How to make all people happy
@@ -30,7 +30,7 @@ and see how it works without having to read the actual code.
 For an example on how that would look like, check the sidebar in
 `our own documentation <https://docs.phpdoc.org/latest/>`_.
 
-.. hint::
+.. dummy::
 
    There is a new feature underway to render handwritten documentation, like the one you are reading now. Check this
    space for updates in the coming months.
